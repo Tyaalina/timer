@@ -2,6 +2,8 @@ const inputEl = document.querySelector('input');
 const buttonEl = document.querySelector('button');
 const timerEl = document.querySelector('span');
 
+let intervalId = null;
+
 const format = (time) => {
   const hours = Math.floor(time / 3600);
   const minutes = Math.floor((time % 3600) / 60);
