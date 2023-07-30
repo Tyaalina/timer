@@ -48,6 +48,14 @@ inputEl.addEventListener('input', () => {
   // оставались только числа
 });
 
+inputEl.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    newTimer();
+  }
+
+});
+
 buttonEl.addEventListener('click', () => {
   newTimer();
 });
