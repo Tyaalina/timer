@@ -35,6 +35,14 @@ const createTimerAnimator = () => {
   };
 };
 
+//Функция создания нового таймера
+const newTimer = () => {
+  const seconds = Number(inputEl.value);
+  //Очищаем предыдущий таймер
+  clearInterval(intervalId);
+  animateTimer(seconds);
+  inputEl.value = '';
+}
 const animateTimer = createTimerAnimator();
 
 inputEl.addEventListener('input', () => {
@@ -43,10 +51,5 @@ inputEl.addEventListener('input', () => {
 });
 
 buttonEl.addEventListener('click', () => {
-
-  const seconds = Number(inputEl.value);
-
-  animateTimer(seconds);
-
-  inputEl.value = '';
+  newTimer();
 });
