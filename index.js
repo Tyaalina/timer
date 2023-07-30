@@ -4,6 +4,7 @@ const timerEl = document.querySelector('span');
 
 let intervalId = null;
 
+//Функция для преведения секунд к необходимому формату
 const format = (time) => {
   const hours = Math.floor(time / 3600);
   const minutes = Math.floor((time % 3600) / 60);
@@ -12,8 +13,7 @@ const format = (time) => {
   return hours.toString().padStart(2, '0') + ":" + minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0')
 }
 
-// Напишите реализацию createTimerAnimator
-// который будет анимировать timerEl
+//Функция по созданию анимированности таймера
 const createTimerAnimator = () => {
   return (seconds) => {
     let currentTime = seconds;
@@ -50,6 +50,7 @@ inputEl.addEventListener('input', () => {
   // оставались только числа
 });
 
+//Событие при нажатии на кнопку Enter
 inputEl.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     event.preventDefault();
@@ -58,6 +59,7 @@ inputEl.addEventListener('keydown', (event) => {
 
 });
 
+//Событие при нажатии на кнопку
 buttonEl.addEventListener('click', () => {
   newTimer();
 });
