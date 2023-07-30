@@ -16,20 +16,18 @@ const createTimerAnimator = () => {
   return (seconds) => {
     let currentTime = seconds;
 
-    buttonEl.disabled = true;
-
     // Используем функцию setInterval, которая повторяет вызов через определённый интервал времени в миллисекундах
-    let intervalId = setInterval(() => {
+    intervalId = setInterval(() => {
       //Выводим данные в форму таймера
       timerEl.innerHTML = format(currentTime);
       //Уменьшаем текущее время
-      -- currentTime;
+      --currentTime;
       //Если таймер закончился
       if (currentTime < 0) {
         //Очищаем функцию из памяти
         clearInterval(intervalId);
-        timerEl.innerHTML = "FINISH"
-        buttonEl.disabled = false;
+        //Вывод сообщения о конце
+        alert("FINISH")
       }
     }, 1000);
   };
